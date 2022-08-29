@@ -28,7 +28,7 @@ function buildHeaderDirective(key: string, value: boolean | number) {
   return `${key}=${value}`;
 }
 
-// Adds the `Cache-Control` header to the response.
+/** Adds the `Cache-Control` header to the response. */
 export function addCacheHeader(
   response: Response,
   directives: CacheHeaderDirectives = {},
