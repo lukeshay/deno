@@ -21,4 +21,5 @@ jobs:
           git-user-email: "deno@lukeshay.com"
       - name: Print version
         run: "echo '${{ steps.release.outputs.version }}'"
-      - run: git tag ${{ steps.release.outputs.version }} && git push origin ${{ steps.release.outputs.version }}
+      - run: git tag ${{ steps.release.outputs.version }} || exit 0
+      - run: git push origin ${{ steps.release.outputs.version }}
