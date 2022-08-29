@@ -21,3 +21,7 @@ jobs:
           git-user-email: "deno@lukeshay.com"
       - name: Print version
         run: "echo '${{ steps.release.outputs.version }}'"
+      - uses: actions-ecosystem/action-push-tag@v1
+        with:
+          tag: ${{ steps.release.outputs.version }}
+          message: "chore: Release version ${{ steps.release.outputs.version }}"
