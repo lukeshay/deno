@@ -1,0 +1,23 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: cocogitto/cocogitto-action@v3
+        id: release
+        with:
+          check-latest-tag-only: true
+          release: true
+          git-user: "Release Bot"
+          git-user-email: "deno@lukeshay.com"
+      - name: Print version
+        run: "echo '${{ steps.release.outputs.version }}'"
