@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "std/": "https://deno.land/std@0.153.0/",
+    "faker": "https://esm.sh/@faker-js/faker@7.4.0",
+    "faker/": "https://esm.sh/@faker-js/faker@7.4.0/"
+  }
+}
